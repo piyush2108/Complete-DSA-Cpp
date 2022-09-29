@@ -8,7 +8,7 @@ pair<int, int> binarySearch2D(vector<vector<int>> arr, int num){
     int i = 0;
     int j = col-1;
 
-    while(i <= row && j >= 0){
+    while(i < row && j >= 0){
 
         if(arr[i][j] == num){
             pair<int, int> p = make_pair(i, j);
