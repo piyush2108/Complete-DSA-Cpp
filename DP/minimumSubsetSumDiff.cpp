@@ -6,6 +6,7 @@ using namespace std;
 vector<int> isSubset(vector<int> arr, int n, int range){
      vector<int> ans;
 
+     //DP matrix
      int t[n+1][range+1];
 
      for(int i=0; i<=n; i++){
@@ -24,6 +25,7 @@ vector<int> isSubset(vector<int> arr, int n, int range){
           }
      }
 
+     //store the possible sums from the last row of the DP matrix
      for(int i=0; i<=range; i++){
           if(t[n][i] == 1) ans.push_back(i);
      }
@@ -39,7 +41,11 @@ int minSubSetDiff(vector<int> arr){
           range += x;
      }
 
+     //only the last row of DP matrix is useful for this problem
+     //because we need to find out which sum is possible from the given range
+     //Range: 0 --> sum of elements or array
      vector<int> ans = isSubset(arr, n, range);
+
      int minDiff = INT_MAX;
      for(int i=0; i<ans.size()/2; i++){
           minDiff = min(minDiff, abs(range - 2*ans[i]));

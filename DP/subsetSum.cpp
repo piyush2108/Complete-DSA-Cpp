@@ -5,10 +5,10 @@
 using namespace std;
 
 bool isSubsetPossible(vector<int> arr, int k, int n){
-     //declare the array
+     //DP matrix
      bool t[n+1][k+1];
 
-     //initialize the array t
+     //initialization
      for(int i=0; i<=n; i++){
           for(int j=0; j<=k; j++){
                if(i==0) t[i][j] = 0;

@@ -6,14 +6,21 @@ using namespace std;
 bool isEqualPartition(vector<int> arr, int n){
      
      int sum = 0;
+     //sum of the elements of the given array
      for(int i=0; i<n; i++){
           sum += arr[i];
      }
+
+     //concept
+     //to find S1 = S2
+     //but S1 + S2 = sum of the elements of the given array
+     //so 2S1 = sum => S1 = sum/2
      if(sum%2 != 0) return false;
-
      int k = sum/2;
-
+     
      int t[n+1][k+1];
+
+     //initialization
      for(int i=0; i<=n; i++){
           for(int j=0; j<=k; j++){
                if(i == 0) t[i][j] = 0;
