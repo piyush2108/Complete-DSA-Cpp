@@ -21,8 +21,8 @@ bool isEqualPartition(vector<int> arr, int n){
           }
      }
 
-     for(int i=0; i<=n; i++){
-          for(int j=0; j<=k; j++){
+     for(int i=1; i<=n; i++){
+          for(int j=1; j<=k; j++){
                if(arr[i-1] <= j){
                     t[i][j] = t[i-1][j-arr[i-1]] || t[i-1][j];
                }
@@ -35,7 +35,7 @@ bool isEqualPartition(vector<int> arr, int n){
 }
 
 int main(){
-     vector<int> A = {1,5,11,6};   
+     vector<int> A = {1,5,11,5};   
 
      if(isEqualPartition(A, A.size())) cout<<"TRUE"<<endl;
      else cout<<"FALSE"<<endl;
